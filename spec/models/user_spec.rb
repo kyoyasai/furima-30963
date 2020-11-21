@@ -50,8 +50,14 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include 'Password is too short (minimum is 6 characters)'
       end
-      it 'passwordが英数字混合でなければ登録できない' do
+      it 'passwordが英字では登録できない' do
         @user.password = 'aaaaaa'
+        @user.password_confirmation = @user.password
+        @user.valid?
+        expect(@user.errors.full_messages).to include 'Password には英字と数字の両方を含めて設定して下さい'
+      end
+      it 'passwordが数字では登録できない' do
+        @user.password = '111111'
         @user.password_confirmation = @user.password
         @user.valid?
         expect(@user.errors.full_messages).to include 'Password には英字と数字の両方を含めて設定して下さい'
