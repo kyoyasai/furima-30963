@@ -10,10 +10,6 @@ describe User do
       it '必要事項が全て存在すれば登録できる' do
         expect(@user).to be_valid
       end
-      it 'passwordが半角英数字混合の6文字以上であれば登録できる' do
-        password = 'a1b2c3'
-        expect(@user).to be_valid
-      end
     end
 
     context '新規登録がうまくいかないとき' do
