@@ -18,7 +18,7 @@ require 'capistrano3/unicorn'
 # install_plugin Capistrano::SCM::Svn
 # or
 #require "capistrano/scm/git"
-i#nstall_plugin Capistrano::SCM::Git
+#install_plugin Capistrano::SCM::Git
 
 # Include tasks from other gems included in your Gemfile
 #
